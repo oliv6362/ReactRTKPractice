@@ -3,6 +3,8 @@ Its for practicing React, React Redux and Redux toolkit.
 Its a singlepage application where you can see popular movies, higest rated movies or search for movies.
 Its all possible through themoviedb api that hte application are using with Redux toolkit Query
 
+REMEMBER TO PUT UR OWN API KEY INTO src/apis/moviesApi.js!! (PUT_YOUR_API_KEY_HERE)
+
 # Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
