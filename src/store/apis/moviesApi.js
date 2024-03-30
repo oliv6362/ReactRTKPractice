@@ -31,6 +31,18 @@ const moviesApi = createApi({
           };
         },
       }),
+      fetchUpcomingMovies: builder.query({
+        query: () => {
+          return {
+            url: 'movie/upcoming',
+            params: {
+              sort_by: 'release_date.desc',
+              api_key: '(PUT_YOUR_API_KEY_HERE)',
+            },
+            method: 'GET',
+          };
+        },
+      }),
       fetchSearchMovie: builder.query({
         query: (searchTerm) => {
           return {
@@ -43,9 +55,20 @@ const moviesApi = createApi({
           };
         },
       }),
+      fetchPlayMovieTrailer: builder.query({
+        query: (movieTrailerID) => {
+          return {
+            url: `movie/${movieTrailerID}/videos`,
+            params: {
+              api_key: '(PUT_YOUR_API_KEY_HERE)',
+            },
+            method: 'GET',
+          };
+        },
+      }),
     };
   },
 });
 
-export const { useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery } = moviesApi;
+export const { useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery, useFetchUpcomingMoviesQuery, useFetchPlayMovieTrailerQuery} = moviesApi;
 export { moviesApi };

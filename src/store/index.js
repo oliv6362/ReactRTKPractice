@@ -1,12 +1,14 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore} from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { moviesApi } from './apis/moviesApi';
 import { searchTermReducer } from './slices/searchMovieSlice';
+import { playMovieTrailerReducer } from './slices/playMovieTrailerSlice';
 
 export const store = configureStore({
   reducer: {
     [moviesApi.reducerPath]: moviesApi.reducer, //dette er en mere sikker måde, ungår "typo's"
-    searchMovie: searchTermReducer
+    searchMovie: searchTermReducer,
+    playMovieTrailer: playMovieTrailerReducer
   },
   middleware: (getDefaultMiddleware) => {  //Thunk middelware er default når der benyttes Redux Toolkit configureStore.
     return getDefaultMiddleware()
@@ -16,4 +18,4 @@ export const store = configureStore({
 
 setupListeners(store.dispatch);
 
-export {useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery } from './apis/moviesApi';
+export {useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery, useFetchUpcomingMoviesQuery, useFetchPlayMovieTrailerQuery} from './apis/moviesApi';
