@@ -1,12 +1,13 @@
 import { Routes, Route, Link } from 'react-router-dom';
-import HighestRatedMovieList from "./components/highestRatedMoviesList";
-import PopularMoviesList from "./components/popularMoviesList";
+import HighestRatedMovieList from "./components/pages/highestRatedMoviesList";
+import PopularMoviesList from "./components/pages/popularMoviesList";
 import MovieImg from './assets/Image/movie_black2.jpg';
 import Home from './components/home';
 import SearchMovie from './components/searchMovie';
-import SearchedMovieList from './components/searchedMovieList';
-import UpcomingMovieList from './components/upcomingMovieList';
+import SearchedMovieList from './components/pages/searchedMovieList';
+import UpcomingMovieList from './components/pages/upcomingMovieList';
 import PlayedMovieTrailer from './components/playedMovieTrailer';
+import FavoriteMovieList from './components/pages/favoriteMovieList';
 
 
 
@@ -36,7 +37,7 @@ function App() {
         <Route path='/popular' element={[<PlayedMovieTrailer />, <PopularMoviesList />]} />
         <Route path='/highest-rated' element={[<PlayedMovieTrailer />, <HighestRatedMovieList />]} />
         <Route path='/upcoming' element={[<PlayedMovieTrailer />, <UpcomingMovieList />]} />
-        <Route path='/favorite' element={[<PlayedMovieTrailer />, <HighestRatedMovieList />]} />
+        <Route path='/favorite' element={[<PlayedMovieTrailer />, <FavoriteMovieList />]} />
         <Route path='/searchedMovie' element={<SearchedMovieList />} />
       </Routes>
     </div>

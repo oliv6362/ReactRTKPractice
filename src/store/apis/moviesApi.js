@@ -43,6 +43,14 @@ const moviesApi = createApi({
           };
         },
       }),
+      fetchFavoriteMovie: builder.query({
+        query: (favoriteMovieID) => ({
+          url: `movie/${favoriteMovieID}`,
+          params: {
+            api_key: '(PUT_YOUR_API_KEY_HERE)',
+          },
+        }),
+      }),
       fetchSearchMovie: builder.query({
         query: (searchTerm) => {
           return {
@@ -66,9 +74,32 @@ const moviesApi = createApi({
           };
         },
       }),
+      fetchJsonFavorite: builder.query({
+        query: () => ({
+          url: 'http://localhost:3000/MyFavoriteMovies',
+          method: 'GET',
+        }),
+        providesTags: ['Favorites'],
+      }),
+      addJsonFavorite: builder.mutation({
+        query: (movieId) => ({
+          url: 'http://localhost:3000/MyFavoriteMovies',
+          method: 'POST',
+          body: { id: movieId,  isFavorite: true},
+        }),
+        invalidatesTags: ['Favorites'],
+      }),
+      removeJsonFavorite: builder.mutation({
+        query: (movieId) => ({
+          url: `http://localhost:3000/MyFavoriteMovies/${movieId}`,
+          method: 'DELETE',
+        }),
+        invalidatesTags: ['Favorites'],
+      }),
     };
   },
 });
 
-export const { useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery, useFetchUpcomingMoviesQuery, useFetchPlayMovieTrailerQuery} = moviesApi;
+export const { useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery, useFetchUpcomingMoviesQuery, useFetchPlayMovieTrailerQuery, useFetchFavoriteMovieQuery, useFetchJsonFavoriteQuery, useAddJsonFavoriteMutation, useRemoveJsonFavoriteMutation } = moviesApi;
 export { moviesApi };
+

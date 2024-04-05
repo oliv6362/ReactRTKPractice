@@ -10,7 +10,7 @@ function PlayedMovieTrailer() {
         return state.playMovieTrailer.movieTrailerID;
     });
 
-    const { data, error, isFetching } = useFetchPlayMovieTrailerQuery(movieTrailerID );
+    const { data, error, isFetching } = useFetchPlayMovieTrailerQuery(movieTrailerID);
 
     let content;
     if (isFetching) {
