@@ -43,6 +43,18 @@ const moviesApi = createApi({
           };
         },
       }),
+      fetchTvSeries: builder.query({
+        query: () => {
+          return {
+            url: 'discover/tv',
+            params: {
+              sort_by: 'popularity.desc',
+              api_key: '(PUT_YOUR_API_KEY_HERE)'
+            },
+            method: 'GET',
+          };
+        },
+      }),
       fetchFavoriteMovie: builder.query({
         query: (favoriteMovieID) => ({
           url: `movie/${favoriteMovieID}`,
@@ -100,6 +112,6 @@ const moviesApi = createApi({
   },
 });
 
-export const { useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery, useFetchUpcomingMoviesQuery, useFetchPlayMovieTrailerQuery, useFetchFavoriteMovieQuery, useFetchJsonFavoriteQuery, useAddJsonFavoriteMutation, useRemoveJsonFavoriteMutation } = moviesApi;
+export const { useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery, useFetchUpcomingMoviesQuery, useFetchPlayMovieTrailerQuery, useFetchFavoriteMovieQuery, useFetchJsonFavoriteQuery, useAddJsonFavoriteMutation, useRemoveJsonFavoriteMutation, useFetchTvSeriesQuery} = moviesApi;
 export { moviesApi };
 

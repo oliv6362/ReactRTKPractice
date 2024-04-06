@@ -8,6 +8,7 @@ import SearchedMovieList from './components/pages/searchedMovieList';
 import UpcomingMovieList from './components/pages/upcomingMovieList';
 import PlayedMovieTrailer from './components/playedMovieTrailer';
 import FavoriteMovieList from './components/pages/favoriteMovieList';
+import TvSeriesList from './components/pages/tvSeriesList';
 
 
 
@@ -18,9 +19,10 @@ function App() {
         <div className="navbar navbar-expand-lg">
           <nav className="nav navbar-nav">
             <Link to='/' className="nav-item nav-link">Home</Link>
-            <Link to='/popular' className="nav-item nav-link">Popular</Link>
-            <Link to='/highest-rated' className="nav-item nav-link">Highest Rated</Link>
+            <Link to='/popular' className="nav-item nav-link">Popular Movies</Link>
+            <Link to='/highest-rated' className="nav-item nav-link">Highest Rated Movies</Link>
             <Link to='/upcoming' className="nav-item nav-link">Upcoming Movies</Link>
+            <Link to='/tvSeries' className="nav-item nav-link">TV Series</Link>
             <Link to='/favorite' className="nav-item nav-link">My Favorites</Link>
           </nav>
         </div>
@@ -37,6 +39,7 @@ function App() {
         <Route path='/popular' element={[<PlayedMovieTrailer />, <PopularMoviesList />]} />
         <Route path='/highest-rated' element={[<PlayedMovieTrailer />, <HighestRatedMovieList />]} />
         <Route path='/upcoming' element={[<PlayedMovieTrailer />, <UpcomingMovieList />]} />
+        <Route path='/tvSeries' element={[<PlayedMovieTrailer />, <TvSeriesList />]} />
         <Route path='/favorite' element={[<PlayedMovieTrailer />, <FavoriteMovieList />]} />
         <Route path='/searchedMovie' element={<SearchedMovieList />} />
       </Routes>
