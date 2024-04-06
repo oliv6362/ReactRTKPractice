@@ -11,7 +11,6 @@ import FavoriteMovieList from './components/pages/favoriteMovieList';
 import TvSeriesList from './components/pages/tvSeriesList';
 
 
-
 function App() {
   return (
     <div>
@@ -32,17 +31,20 @@ function App() {
 
         </span>
       </div>
-      
+
+
+      <PlayedMovieTrailer />
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/popular' element={[<PlayedMovieTrailer />, <PopularMoviesList />]} />
-        <Route path='/highest-rated' element={[<PlayedMovieTrailer />, <HighestRatedMovieList />]} />
-        <Route path='/upcoming' element={[<PlayedMovieTrailer />, <UpcomingMovieList />]} />
-        <Route path='/tvSeries' element={[<PlayedMovieTrailer />, <TvSeriesList />]} />
-        <Route path='/favorite' element={[<PlayedMovieTrailer />, <FavoriteMovieList />]} />
+        <Route path='/popular' element={<PopularMoviesList />} />
+        <Route path='/highest-rated' element={<HighestRatedMovieList />} />
+        <Route path='/upcoming' element={<UpcomingMovieList />} />
+        <Route path='/tvSeries' element={<TvSeriesList />} />
+        <Route path='/favorite' element={<FavoriteMovieList />} />
         <Route path='/searchedMovie' element={<SearchedMovieList />} />
       </Routes>
+
     </div>
   );
 }

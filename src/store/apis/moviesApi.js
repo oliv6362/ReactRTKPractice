@@ -97,7 +97,7 @@ const moviesApi = createApi({
         query: (movieId) => ({
           url: 'http://localhost:3000/MyFavoriteMovies',
           method: 'POST',
-          body: { id: movieId,  isFavorite: true},
+          body: { id: movieId},
         }),
         invalidatesTags: ['Favorites'],
       }),
