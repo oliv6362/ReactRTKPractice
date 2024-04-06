@@ -1,9 +1,16 @@
 # What is this project about?
-Its for practicing React, React Redux and Redux toolkit.
-Its a singlepage application where you can see popular movies, higest rated movies or search for movies.
-Its all possible through themoviedb api that hte application are using with Redux toolkit Query
+Its for practicing React, React Redux and Redux toolkit & Query.
 
-REMEMBER TO PUT UR OWN API KEY INTO src/apis/moviesApi.js!! (PUT_YOUR_API_KEY_HERE)
+Its a singlepage application that is using TheMovieDb API. Here you can see popular, higest-rated, upcoming & favorited movies, or search for movies. There is also TV-Series! You can view Trailers from movies or TV-Series, and favoirte Movies.
+
+In order to use the application do the following:
+
+1. Download the Project and open the terminal.
+2. Install npm.
+3. Install json-server (if its not already installed).
+4. Put your own key into src/apis/moviesApi.js. (PUT_YOUR_API_KEY_HERE) is the name of the places where the key need to be.
+5. Start the json-server in port 3000 and then start the react application in port 3001 with npm start
+
 
 # Getting Started with Create React App and Redux
 
