@@ -1,6 +1,4 @@
 # What is this project about?
-A Mandatory assignment for Webprogramming - WebApps with React.
-
 The project uses React, React Redux, and Redux toolkit & Query.
 
 It's a single-page application that uses TheMovieDb API. Here you can see popular, highest-rated, upcoming & favorited movies, or search for movies. There is also TV-Series! You can view Trailers from movies or TV-Series, and favorite Movies.
